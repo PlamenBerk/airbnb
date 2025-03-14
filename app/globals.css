@@ -120,30 +120,27 @@
   margin-bottom: 16px;
 }
 
+/* Fix for background images - remove fixed attachment */
 .bg-architecture {
   background-image: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
 .bg-city-guides {
   background-image: url("https://images.unsplash.com/photo-1444723121867-7a241cacace9?q=80&w=2070&auto=format&fit=crop");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
 .bg-urban-resources {
   background-image: url("https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1920&auto=format&fit=crop");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
 .bg-dashboard {
   background-image: url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1964&auto=format&fit=crop");
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
@@ -153,5 +150,15 @@
   backdrop-filter: blur(5px);
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Add these styles for mobile optimization */
+@media (max-width: 768px) {
+  .bg-architecture,
+  .bg-city-guides,
+  .bg-urban-resources,
+  .bg-dashboard {
+    background-attachment: scroll !important;
+  }
 }
 
