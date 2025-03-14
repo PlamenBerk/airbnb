@@ -21,7 +21,7 @@ export default function LoginForm() {
 
     try {
       // Call the REST API endpoint
-      const response = await fetch("http://localhost:8080/api/guest-management/exists", {
+      const response = await fetch("http://34.132.92.1:8080/api/guest-management/exists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
