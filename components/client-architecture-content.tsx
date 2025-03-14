@@ -26,7 +26,16 @@ export function ClientArchitectureTitle() {
 
 export function ClientArchitecturePage() {
   return (
-    <div className="min-h-screen bg-architecture py-12">
+    <div
+      className="min-h-screen py-12"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll",
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="content-overlay p-6 mb-6">
           <ClientBackButton />
