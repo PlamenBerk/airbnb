@@ -44,7 +44,7 @@ export default function LoginForm() {
         console.log("Authentication set in localStorage")
 
         // Redirect to dashboard
-        window.location.href = "/dashboard"
+        window.location.href = `${window.location.origin}/dashboard`;
       } else {
         console.log("Login failed - code doesn't exist")
         setError(t("login.error"))
