@@ -17,13 +17,14 @@ export function ClientDashboardContent() {
 
 export function ClientDashboardPage() {
   return (
-    <div className="min-h-screen bg-dashboard py-12">
+    <div className="min-h-screen bg-dashboard">
       <div
-        className="h-64 w-full bg-cover bg-center mb-12"
+        className="h-64 w-full bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2532&auto=format&fit=crop')",
           backgroundPosition: "center bottom",
+          backgroundAttachment: "scroll", // Explicitly set to scroll
         }}
       >
         <div className="h-full w-full bg-gradient-to-r from-blue-900/70 to-purple-900/70 flex items-center">
@@ -33,7 +34,7 @@ export function ClientDashboardPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <ClientSections />
         </div>
