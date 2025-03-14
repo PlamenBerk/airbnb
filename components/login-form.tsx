@@ -33,7 +33,7 @@ export default function LoginForm() {
       console.log("Attempting to login with code:", accessCode.trim())
 
       // Call the Next.js API route instead of the backend directly
-      const response = await fetch("https://34.132.92.1/api/guest-management/exists", {
+      const response = await fetch("https://airbnbapi.xyz/api/guest-management/exists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
