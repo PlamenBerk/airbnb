@@ -1,18 +1,28 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { KeyRound } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function LoginForm() {
+  const router = useRouter()
   const { t } = useLanguage()
   const [accessCode, setAccessCode] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
+
+  // Check if user is already authenticated on component mount
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem("isAuthenticated") === "true"
+    if (isAuthenticated) {
+      console.log("User already authenticated, redirecting to dashboard")
+      router.push("/dashboard")
+    }
+  }, [router])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -20,8 +30,10 @@ export default function LoginForm() {
     setError("")
 
     try {
-      // Call the REST API endpoint
-      const response = await fetch("https://34.132.92.1/api/guest-management/exists", {
+      console.log("Attempting to login with code:", accessCode.trim())
+
+      // Call the API route
+      const response = await fetch("/api/guest-management/exists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,22 +41,38 @@ export default function LoginForm() {
         body: JSON.stringify({ code: accessCode.trim() }),
       })
 
+      console.log("Response status:", response.status)
+
       if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`)
+        const errorText = await response.text()
+        console.error("API error response:", errorText)
+        throw new Error(`API request failed with status ${response.status}: ${errorText}`)
       }
 
       // Parse the response
-      const exists = await response.json()
+      const data = await response.json()
+      console.log("API response data:", data)
+
+      // Handle different response formats
+      let exists = false
+      if (typeof data === "boolean") {
+        exists = data
+      } else if (data && typeof data === "object") {
+        exists = data.exists || data.success || data.valid || false
+      }
+
+      console.log("Login validation result:", exists)
 
       if (exists === true) {
-        console.log("Login successful")
+        console.log("Login successful, setting authentication")
 
         // Set authentication in localStorage
         localStorage.setItem("isAuthenticated", "true")
-        console.log("Authentication set in localStorage")
+        console.log("Authentication set in localStorage:", localStorage.getItem("isAuthenticated"))
 
-        // Redirect to dashboard
-        window.location.href = `${window.location.origin}/dashboard`;
+        // Use Next.js router for client-side navigation
+        console.log("Redirecting to dashboard")
+        router.push("/dashboard")
       } else {
         console.log("Login failed - code doesn't exist")
         setError(t("login.error"))

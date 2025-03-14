@@ -1,26 +1,15 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
+// This middleware is now disabled since we're handling auth client-side
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-
-  // Check if the path starts with /dashboard
-  if (pathname.startsWith("/dashboard")) {
-    // Check for the authentication cookie
-    const authCookie = request.cookies.get("isAuthenticated")
-    const isAuthenticated = authCookie?.value === "true"
-
-    // If not authenticated, redirect to login
-    if (!isAuthenticated) {
-      return NextResponse.redirect(new URL("/", request.url))
-    }
-  }
-
+  // We're not doing any server-side auth checks anymore
+  // Just pass through all requests
   return NextResponse.next()
 }
 
 // Configure middleware to run on dashboard routes
 export const config = {
-  matcher: ["/dashboard", "/dashboard/:path*"],
+  matcher: [], // Empty array means middleware won't run on any routes
 }
 

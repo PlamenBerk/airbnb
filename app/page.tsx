@@ -1,6 +1,7 @@
 import LoginForm from "@/components/login-form"
 import LanguageSwitcher from "@/components/language-switcher"
 import { ClientLoginContent } from "@/components/client-login-content"
+import AuthDebugger from "@/components/auth-debugger"
 
 export default function Home() {
   return (
@@ -12,10 +13,10 @@ export default function Home() {
         <ClientLoginContent />
         <LoginForm />
       </div>
+
+      {/* Add this for debugging - remove in production */}
+      {process.env.NODE_ENV !== "production" && <AuthDebugger />}
     </div>
   )
-
-  // Add console log to verify the page is loaded
-  console.log("Login page loaded")
 }
 

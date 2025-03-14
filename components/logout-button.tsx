@@ -2,18 +2,20 @@
 
 import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useLanguage } from "@/contexts/language-context"
+import { clearAuthentication } from "@/lib/auth-client"
 
 export default function LogoutButton() {
+  const router = useRouter()
   const { t } = useLanguage()
 
   const handleLogout = () => {
-    // Clear authentication from localStorage
-    localStorage.removeItem("isAuthenticated")
-    console.log("Authentication cleared from localStorage")
+    // Clear authentication
+    clearAuthentication()
 
-    // Redirect to login page
-    window.location.href = "/"
+    // Redirect to login page using Next.js router
+    router.push("/")
   }
 
   return (
