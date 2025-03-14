@@ -32,8 +32,8 @@ export default function LoginForm() {
     try {
       console.log("Attempting to login with code:", accessCode.trim())
 
-      // Call the API route
-      const response = await fetch("https://34.132.92.1/api/guest-management/exists", {
+      // Call the Next.js API route instead of the backend directly
+      const response = await fetch("/api/guest-management/exists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
