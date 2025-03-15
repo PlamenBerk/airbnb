@@ -3,12 +3,12 @@
 import { useLanguage } from "@/contexts/language-context"
 import { FileText, Bus, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ClientBackButton } from "./client-architecture-content"
+import { ClientBackButton } from "./client-food-content"
 
 export function ClientResourcesTitle() {
   const { t } = useLanguage()
 
-  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.resources.title")}</h1>
+  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.landmarks.title")}</h1>
 }
 
 export function ClientResourcesPage() {

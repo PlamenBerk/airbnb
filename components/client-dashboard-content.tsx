@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Building, BookOpen, Landmark } from "lucide-react"
+import {CookingPot, BookOpen, Landmark, Car} from "lucide-react"
 import SectionCard from "@/components/section-card"
 
 export function ClientDashboardContent() {
@@ -46,25 +46,25 @@ export function ClientSections() {
   const sections = [
     {
       id: 1,
-      title: t("section.architecture.title"),
-      description: t("section.architecture.description"),
-      href: "/dashboard/product-features",
-      icon: Building,
+      title: t("section.food.title"),
+      description: t("section.food.description"),
+      href: "/dashboard/food",
+      icon: CookingPot,
       color: "bg-blue-100 text-blue-600",
     },
     {
       id: 2,
-      title: t("section.guides.title"),
-      description: t("section.guides.description"),
-      href: "/dashboard/user-guides",
-      icon: BookOpen,
+      title: t("section.transport.title"),
+      description: t("section.transport.description"),
+      href: "/dashboard/transport",
+      icon: Car,
       color: "bg-purple-100 text-purple-600",
     },
     {
       id: 3,
-      title: t("section.resources.title"),
-      description: t("section.resources.description"),
-      href: "/dashboard/resources",
+      title: t("section.landmarks.title"),
+      description: t("section.landmarks.description"),
+      href: "/dashboard/landmarks",
       icon: Landmark,
       color: "bg-emerald-100 text-emerald-600",
     },

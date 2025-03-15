@@ -35,12 +35,12 @@ const translations: Record<Language, Record<string, string>> = {
     "dashboard.subtitle": "Explore the urban landscape and discover what the city has to offer",
 
     // Sections
-    "section.architecture.title": "Architecture",
-    "section.architecture.description": "Discover the iconic buildings and architectural marvels of the city.",
-    "section.guides.title": "City Guides",
-    "section.guides.description": "Navigate the urban landscape with our comprehensive city guides.",
-    "section.resources.title": "Urban Resources",
-    "section.resources.description": "Access maps, transportation info, and other essential city resources.",
+    "section.food.title": "Are you hungry?",
+    "section.food.description": "Check out our food offers (dine-in at the restaurant or takeout)",
+    "section.transport.title": "Need a transportation?",
+    "section.transport.description": "Check out our city transport options (taxi and public transport)",
+    "section.landmarks.title": "Want to explore the city?",
+    "section.landmarks.description": "Check out our offers for walks and sightseeing in and around the city",
 
     // Architecture page
     "architecture.skyscrapers.title": "Modern Skyscrapers",
@@ -97,12 +97,12 @@ const translations: Record<Language, Record<string, string>> = {
     "dashboard.subtitle": "Разгледайте градския пейзаж и открийте какво предлага градът",
 
     // Sections
-    "section.architecture.title": "Архитектура",
-    "section.architecture.description": "Открийте емблематичните сгради и архитектурни чудеса на града.",
-    "section.guides.title": "Градски Пътеводители",
-    "section.guides.description": "Навигирайте в градския пейзаж с нашите изчерпателни градски пътеводители.",
-    "section.resources.title": "Градски Ресурси",
-    "section.resources.description": "Достъп до карти, информация за транспорт и други важни градски ресурси.",
+    "section.food.title": "Гладен ли си?",
+    "section.food.description": "Разгледайте предложенията ни за храна (на място в ресторанта или за вкъщи)",
+    "section.transport.title": "Имате нужда от транспорт?",
+    "section.transport.description": "Разгледайте нашите предложения за транспорт в града (таксита и градски транспорт)",
+    "section.landmarks.title": "Искате да опознаете града?",
+    "section.landmarks.description": "Разгледайте предложенията ни за разходки и забележителности в и около града",
 
     // Architecture page
     "architecture.skyscrapers.title": "Модерни Небостъргачи",

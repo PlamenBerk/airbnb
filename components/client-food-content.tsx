@@ -18,28 +18,28 @@ export function ClientBackButton() {
   )
 }
 
-export function ClientArchitectureTitle() {
+export function ClientFoodTitle() {
   const { t } = useLanguage()
 
-  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.architecture.title")}</h1>
+  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.food.title")}</h1>
 }
 
-export function ClientArchitecturePage() {
+export function ClientFoodPage() {
   return (
     <div className="min-h-screen bg-architecture py-12">
       <div className="container mx-auto px-4">
         <div className="content-overlay p-6 mb-6">
           <ClientBackButton />
-          <ClientArchitectureTitle />
+          <ClientFoodTitle />
         </div>
 
-        <ClientArchitectureContent />
+        <ClientFoodContent />
       </div>
     </div>
   )
 }
 
-export function ClientArchitectureContent() {
+export function ClientFoodContent() {
   const { t } = useLanguage()
 
   return (

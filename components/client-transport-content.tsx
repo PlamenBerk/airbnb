@@ -2,15 +2,15 @@
 
 import { useLanguage } from "@/contexts/language-context"
 import { Map, Compass, Utensils } from "lucide-react"
-import { ClientBackButton } from "./client-architecture-content"
+import { ClientBackButton } from "./client-food-content"
 
 export function ClientGuidesTitle() {
   const { t } = useLanguage()
 
-  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.guides.title")}</h1>
+  return <h1 className="mb-6 text-3xl font-bold text-secondary">{t("section.transport.title")}</h1>
 }
 
-export function ClientGuidesPage() {
+export function ClientTransportPage() {
   return (
     <div className="min-h-screen bg-city-guides py-12">
       <div className="container mx-auto px-4">
@@ -19,13 +19,13 @@ export function ClientGuidesPage() {
           <ClientGuidesTitle />
         </div>
 
-        <ClientGuidesContent />
+        <ClientTransportContent />
       </div>
     </div>
   )
 }
 
-export function ClientGuidesContent() {
+export function ClientTransportContent() {
   const { t } = useLanguage()
 
   return (
