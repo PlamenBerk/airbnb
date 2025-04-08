@@ -9,7 +9,7 @@ import { KeyRound } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 // Use your domain name with proper SSL certificate
-const API_URL = "https://airbnbapp.xyz/api/guest-management/exists"
+const API_URL = "https://airbnbapi.cc/api/guest-management/exists"
 
 export default function LoginForm() {
   const router = useRouter()
